@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root to: "customers#show"
 
   resources :customers

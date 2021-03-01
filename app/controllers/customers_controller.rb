@@ -15,7 +15,21 @@ class CustomersController < ApplicationController
     end
   end
 
+  def edit
+    @customer = Customer.find(params[:id])
+  end
+
+  def update
+    @customer = Customer.find(params[:id])
+    if @customer.update(customer_params)
+      redirect_to @customer
+    else
+      render 'edit'
+    end
+  end
+
   def show
+    return redirect_to log_in_path if params[:id] == nil
     @customer = Customer.find(params[:id])
   end
 

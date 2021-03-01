@@ -1,0 +1,20 @@
+<form accept-charset="UTF-8" action="/customers/<%= @customer.id %>" class="new_user"
+      id="edit_user_1" method="post">
+  <input name="_method" type="hidden" value="patch" />
+
+  <label for="user_email">Email</label>
+  <input id="user_email" name="customer[email]" type="email" />
+
+  <label for="user_password">Password(min: 6)</label>
+  <input id="user_password" name="customer[password]"
+         type="password" />
+
+  <label for="user_password_confirmation">PasswordConfirmation</label>
+  <input id="user_password_confirmation"
+         name="customer[password_confirmation]" type="password" />
+
+  <br>
+  <input class="btn btn-primary" name="commit" type="submit"
+         value="Change my account" />
+
+</form>
