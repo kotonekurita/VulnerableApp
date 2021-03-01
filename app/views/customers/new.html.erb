@@ -1,0 +1,21 @@
+<form accept-charset="UTF-8" action="/customers" class="new_user"
+      id="new_user" method="post">
+  <input name="utf8" type="hidden" value="&#x2713;" />
+  <label for="user_name">Name</label>
+  <input id="user_name" name="customer[name]" type="text" />
+
+  <label for="user_email">Email</label>
+  <input id="user_email" name="customer[email]" type="email" />
+
+  <label for="user_password">Password(min: 6)</label>
+  <input id="user_password" name="customer[password]"
+         type="password" />
+
+  <label for="user_password_confirmation">PasswordConfirmation</label>
+  <input id="user_password_confirmation"
+         name="customer[password_confirmation]" type="password" />
+  <br>
+  <input class="btn btn-primary" name="commit" type="submit"
+         value="Create my account" />
+
+</form>
