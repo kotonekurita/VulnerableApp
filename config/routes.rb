@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :customers
   get 'sign_up' => 'customers#new'
 
+  resources :sessions, only: :destroy
   get    'log_in'   => 'sessions#new'
   post   'log_in'   => 'sessions#create'
 
