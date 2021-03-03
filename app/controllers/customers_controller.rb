@@ -19,9 +19,8 @@ class CustomersController < ApplicationController
   end
 
   def update
-    customer = Customer.find_by(id: session[:customer_id])
-    if customer.update(customer_params)
-      redirect_to customer
+    if current_customer.update(customer_params)
+      redirect_to current_customer
     else
       render 'edit'
     end
