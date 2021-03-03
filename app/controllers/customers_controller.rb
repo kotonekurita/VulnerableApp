@@ -1,5 +1,5 @@
 class CustomersController < ApplicationController
-  before_action :logged_in_customer, except: [:new, :create]
+  before_action :logged_in_customer, except: [:new, :create, :update]
 
   def new
     @customer = Customer.new
