@@ -2,11 +2,12 @@ Rails.application.routes.draw do
 
   root to: "customers#show"
 
-  resources :customers
-  get 'sign_up' => 'customers#new'
+  resources :customers, except: :update
+  get 'sign_up' , to: 'customers#new'
+  patch 'customers/edit', to: 'customers#update'
 
   resources :sessions, only: :destroy
-  get    'log_in'   => 'sessions#new'
-  post   'log_in'   => 'sessions#create'
+  get    'log_in', to: 'sessions#new'
+  post   'log_in', to: 'sessions#create'
 
 end
