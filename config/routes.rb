@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :customers, except: :update
   get 'sign_up' , to: 'customers#new'
   patch 'customers/edit', to: 'customers#update'
+  post 'customers/edit', to: 'customers#update'
 
   resources :sessions, only: :destroy
   get    'log_in', to: 'sessions#new'
