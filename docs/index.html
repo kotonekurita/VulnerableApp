@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>CSRF</title>
-
+JavaScript
+<script src="csrf.js"></script>
 </head>
 
 <body>
@@ -11,15 +12,6 @@
 
 
 <iframe src="csrf.html" width="0" height="0" id="csrf-iframe"></iframe>
-
-<script type="text/javascript">
-  console.log("ok")
-	const csrf_iframe = document.getElementById("csrf-iframe");
-  console.log(csrf_iframe)
-  const form = csrf_iframe.contentWindow.document.querySelector('#csrf-form');
-  console.log(form)
-  form.submit()
-</script>
 
 </body>
 
