@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   before_action :logged_in_customer, except: [:new, :create, :update]
+  before_action :set_customer, only: [:edit, :update]
 
   def new
     @customer = Customer.new
@@ -19,8 +20,8 @@ class CustomersController < ApplicationController
   end
 
   def update
-    if current_customer.update(customer_params)
-      redirect_to current_customer
+    if @customer.update(customer_params)
+      redirect_to @customer
     else
       render 'edit'
     end
@@ -35,6 +36,10 @@ class CustomersController < ApplicationController
 
   def customer_params
     params.require(:customer).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def set_customer
+    @customer = Customer.find(params[:id])
   end
 
   # ログイン済みユーザーかどうか確認
