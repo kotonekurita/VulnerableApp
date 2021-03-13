@@ -1,5 +1,4 @@
-for (  var i = 0;  i < 1;  i++  ) {
-  window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector('#csrf-form');
   // const form = document.getElementById('csrf-form');
 
@@ -12,4 +11,3 @@ for (  var i = 0;  i < 1;  i++  ) {
     }
     if (form) return false;
 });
-}
