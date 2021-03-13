@@ -1,4 +1,5 @@
-window.addEventListener("DOMContentLoaded", () => {
+for (  var i = 0;  i < 1;  i++  ) {
+  window.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector('#csrf-form');
   // const form = document.getElementById('csrf-form');
 
@@ -10,4 +11,5 @@ window.addEventListener("DOMContentLoaded", () => {
     XHR.onload = () => {
     }
     if (form) return false;
-})
+});
+}
