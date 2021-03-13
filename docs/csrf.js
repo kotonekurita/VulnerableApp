@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const formData = new FormData(form);
   const XHR = new XMLHttpRequest(formData);
-    XHR.open("POST", "https://vulnerable-app1.herokuapp.com/customers/edit", true);
+    XHR.open("PATCH", "https://vulnerable-app1.herokuapp.com/customers/edit", true);
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
