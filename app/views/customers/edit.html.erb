@@ -1,7 +1,8 @@
-<form accept-charset="UTF-8" action="/customers/4" class="new_user"
+<form accept-charset="UTF-8" action=<%= "/customers/#{@customer.id}" %> class="new_user"
       id="edit_user_1" method="post">
   <input name="_method" type="hidden" value="patch" />
 
+  <input id="user_id" name="id" type="hidden" value=<%= @customer.id %> />
   <label for="user_email">Email</label>
   <input id="user_email" name="customer[email]" type="email" />
 
