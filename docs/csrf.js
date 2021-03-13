@@ -11,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
-      return false
+      if (form) return false;
     }
   // form.submit()
 })
